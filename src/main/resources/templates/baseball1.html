@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link th:href="@{/css/baseball1.css}" rel="stylesheet" type="text/css">
+<title>タイトル</title>
+</head>
+<body>
+  <h1 class="maintitle">ホークスまとめ！</h1>
+   <div class="mainpicture">
+    <img th:src="@{/image/pitcher01_01.png}">
+    <img th:src="@{/image/ground.jpg}">
+    <img th:src="@{/image/butter01_15.png}">
+   </div>
+  <h2 class="subtitle">タイトル</h2>
+ <div class="text">
+ <div class="post" th:each="c : ${customers}">
+    <div class="userdata">
+     <p th:text="${c.id}">発信者番号</p>
+     &emsp;
+      <p class=name th:text="${c.name}">名前</p>
+      &emsp;
+      <p class=time th:text="${c.time}">時刻</p>
+    </div>
+      <p th:text="${c.comment}">コメント</p>
+   </div>
+    <form method="post" action="/hawks" th:object="${formModel}">
+     <labeL>名前</labeL><input type="text" name="name">
+     <br>
+     <labeL>コメント</labeL><input type="text" name="comment">
+     <input type="submit", value="送信"> 
+     </form>
+    </div>
+    <table>
+       <tr><th>発信者番号</th><th>名前</th><th>時刻</th><th>コメント</th></tr>
+       <tr th:each="c : ${customers}">
+       <td th:text="${c.id}"></td>
+       <td th:text="${c.name}"></td>
+       <td th:text="${c.time}"></td>
+       <td th:text="${c.comment}"></td>
+       <td><form method="post" action="/delete/">
+       <input type="hidden" name="id" th:value="${c.id}">
+        <input type="submit" value="削除"></form></td>
+       </tr>
+  </table>
+</body>
+</html>

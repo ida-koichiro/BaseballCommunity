@@ -1,0 +1,40 @@
+@charset "UTF-8";
+body{
+	maigin-left : 10px;
+	margin-right : 10px;
+}
+.mainpicture{
+	background-color: #7676d8;
+	display: flex;
+	align-items: center;
+}
+.maintitle{
+	background-color: #fff56c;
+	color: #181818;
+	text-align:center;
+}
+.subtitle{
+	color: #ff3939;
+	background-color: #aec6ac;
+	text-align:center;
+}
+.text{
+	background-color: #aec6ac;
+	padding-left: 20vw;
+    padding-right: 20vw;
+}
+.userdata{
+	display:flex;
+	align-items:center;
+}
+.name{
+	color:#010e56;
+}
+.time{
+	margin-right : 10px;
+}
+.otherpage{
+	display: flex;
+    align-items: center; 
+	justify-content: space-between;
+}
